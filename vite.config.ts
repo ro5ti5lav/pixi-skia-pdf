@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
     root: '.',
@@ -13,5 +14,15 @@ export default defineConfig({
     optimizeDeps: {
         exclude: ['canvaskit-wasm'],
         include: ['jspdf']
-    }
+    },
+    plugins: [
+        viteStaticCopy({
+            targets: [
+                {
+                    src: 'assets', // Путь к папке в корне
+                    dest: 'assets', // Папка в `dist`, куда копируются файлы
+                },
+            ],
+        }),
+    ],
 }); 
