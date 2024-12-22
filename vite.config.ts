@@ -20,7 +20,7 @@ export default defineConfig({
             targets: [
                 {
                     src: 'assets', // Путь к папке в корне
-                    dest: 'assets', // Папка в `dist`, куда копируются файлы
+                    dest: '.', // Папка в `dist`, куда копируются файлы
                 },
             ],
         }),
